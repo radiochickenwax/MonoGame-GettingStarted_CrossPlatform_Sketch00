@@ -9,7 +9,7 @@ namespace MonoGame_GettingStarted_CrossPlatform_Sketch00
     /// </summary>
     public class Game1 : Game
     {
-        Texture2D textureBall;
+        Texture2D ballTexture;
         Vector2 ballPosition;
         float ballSpeed;
         GraphicsDeviceManager graphics;
@@ -47,7 +47,7 @@ namespace MonoGame_GettingStarted_CrossPlatform_Sketch00
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
-            textureBall = Content.Load<Texture2D>("ball");
+            ballTexture = Content.Load<Texture2D>("ball");
         }
 
         /// <summary>
@@ -84,7 +84,8 @@ namespace MonoGame_GettingStarted_CrossPlatform_Sketch00
 
             // TODO: Add your drawing code here
             spriteBatch.Begin();
-            spriteBatch.Draw(textureBall, ballPosition, Color.White);
+            //spriteBatch.Draw(textureBall, ballPosition, Color.White);
+            spriteBatch.Draw(ballTexture, ballPosition, null, Color.White, 0f, new Vector2(ballTexture.Width/2, ballTexture.Height /2), Vector2.One, SpriteEffects.None, 0f);
             spriteBatch.End();
 
             base.Draw(gameTime);
